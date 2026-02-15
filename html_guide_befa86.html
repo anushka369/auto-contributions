@@ -1,0 +1,164 @@
+<!--
+LEARNING OBJECTIVE:
+Understand and apply advanced semantic HTML5 tags to structure a rich blog post or news article for enhanced accessibility and SEO.
+This tutorial focuses on using tags like <article>, <header>, <time>, <figure>, <figcaption>, <blockquote>, <aside>, <section>, and <footer>
+to clearly define content sections and improve document outline, making web content more meaningful to browsers, search engines, and assistive technologies.
+-->
+
+<!DOCTYPE html>
+<!-- The <!DOCTYPE html> declaration defines this document to be an HTML5 document.
+     WHY: It tells the browser which HTML standard to use, enabling modern features and consistent rendering. -->
+
+<html lang="en">
+<!-- The <html> element is the root element of an HTML page. All other elements are descendants of it.
+     The 'lang' attribute specifies the primary language of the document (e.g., "en" for English).
+     WHY: Crucial for accessibility (screen readers pronounce text correctly) and SEO (search engines serve language-specific content). -->
+
+<head>
+    <!-- The <head> element contains meta-information about the HTML document that is not displayed directly on the page. -->
+    <meta charset="UTF-8">
+    <!-- <meta charset="UTF-8"> specifies the character encoding for the document.
+         WHY: Ensures proper display of various international characters and prevents display issues. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport"> configures the viewport's width and initial zoom level.
+         WHY: Essential for responsive web design, ensuring your content adapts well to different screen sizes (mobile, tablet, desktop). -->
+    <title>Semantic Article Structure Tutorial</title>
+    <!-- The <title> element sets the title that appears in the browser tab or window title bar.
+         WHY: A critical SEO factor (often displayed in search results) and important for user orientation. -->
+</head>
+
+<body>
+    <!-- The <body> element contains all the visible content of an HTML document. -->
+
+    <main>
+        <!-- The <main> element represents the dominant content of the <body> of a document.
+             There should only be one <main> element per document, and it should NOT be a descendant of <article>, <aside>, <footer>, <header>, or <nav>.
+             WHY: It's crucial for accessibility, allowing screen readers and other assistive technologies to skip directly to the main content.
+             It clearly signals the primary focus of the page. -->
+
+        <article>
+            <!-- The <article> element represents a self-contained composition in a document, page, application, or site,
+                 which is intended to be independently distributable or reusable (e.g., a forum post, a magazine or newspaper article, or a blog entry).
+                 Think of it as a complete piece of content that could be syndicated elsewhere without losing its meaning.
+                 WHY: It tells search engines and screen readers that this block of content is a complete, standalone piece.
+                 Helps in content syndication and enhances the document outline. -->
+
+            <header>
+                <!-- The <header> element, when used INSIDE an <article>, represents the introductory content for THAT SPECIFIC article.
+                     It typically contains the article's heading, author information, and publication date.
+                     WHY: Semantically groups the introductory information specific to the article, improving clarity and machine understanding. -->
+                <h1>The Wonders of Semantic HTML5: Structuring Your Content</h1>
+                <!-- <h1> is the main heading for THIS article. There should generally be only one <h1> per <article> to define its primary topic.
+                     WHY: Essential for SEO, defining the most important keyword/topic of the article. Aids accessibility by giving a clear starting point. -->
+                <p>By <a href="#author-info">Dr. HTML Savvy</a>, published on <time datetime="2023-10-27">October 27, 2023</time></p>
+                <!-- <p> for introductory text like author and date.
+                     The <time> element represents a specific period in time (e.g., a date, time, or duration).
+                     The 'datetime' attribute provides a machine-readable format (YYYY-MM-DD), crucial for SEO, calendar apps, and data extraction.
+                     WHY: Semantic meaning for dates/times, improving discoverability and clarity for machines. -->
+            </header>
+
+            <p>Semantic HTML5 tags go beyond mere styling. They provide meaning to the content, making web pages more accessible,
+               search engine friendly, and easier to maintain. Let's explore some key elements for structuring a rich post.</p>
+
+            <h2>Why Semantics Matter for Blog Posts</h2>
+            <!-- <h2> represents a subheading within the article, nested logically under <h1>.
+                 Subheadings (h2, h3, etc.) create a hierarchical structure.
+                 WHY: Creates a clear content hierarchy, aiding both readability for users and understanding for search engines/screen readers.
+                 Helps users quickly scan content and allows search engines to better index topic sections. -->
+            <p>Using semantic tags helps browsers, search engines, and other web technologies understand the content better.
+               Instead of just generic `div` tags, we use tags that describe the *type* of content they contain, like an `<article>` or a `<blockquote>`.</p>
+
+            <figure>
+                <!-- The <figure> element is used to encapsulate media content (like images, diagrams, code snippets, videos, etc.)
+                     that is referenced from the main flow of the document, but that can be moved to another part of the document
+                     or to an appendix without affecting the main flow.
+                     WHY: Semantically groups media with its caption, improving content structure and making it clear what the image is about. -->
+                <img src="https://via.placeholder.com/600x300/F0F0F0/000000?text=Semantic+HTML+Structure" alt="Diagram showing semantic HTML elements like header, article, aside, and footer">
+                <!-- <img> displays an image. The 'src' defines the image source.
+                     The 'alt' attribute is vital for accessibility (screen readers describe the image content) and SEO (image search). -->
+                <figcaption>
+                    <!-- The <figcaption> element provides a caption or legend for the content of its parent <figure>.
+                         WHY: Explicitly associates a caption with its figure, enhancing accessibility and context for both users and machines. -->
+                    Figure 1: A visual representation of a well-structured semantic HTML document.
+                </figcaption>
+            </figure>
+
+            <h3>Benefits for Accessibility and SEO</h3>
+            <!-- <h3> is a subheading nested under <h2>, further refining the content structure. -->
+            <p>For users relying on screen readers, semantic HTML provides a navigational roadmap. Tags like `<header>`, `<footer>`,
+               `<main>`, `<article>`, and `<aside>` allow screen readers to announce the type of content and enable users
+               to skip to relevant sections quickly. For SEO, well-structured content is easier for crawlers to understand and index.</p>
+
+            <blockquote>
+                <!-- The <blockquote> element indicates that the enclosed text is an extended quotation.
+                     It typically renders with an indent. For short inline quotes, use <q>.
+                     WHY: Semantically identifies quoted content, aiding understanding for machines and users. -->
+                <p>"The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect."</p>
+                <footer>— <cite>Tim Berners-Lee</cite></footer>
+                <!-- The <footer> element, when used within a <blockquote>, provides attribution for the quote. -->
+            </blockquote>
+
+            <aside>
+                <!-- The <aside> element represents a portion of a document whose content is only indirectly related to the document's main content.
+                     It is often presented as a sidebar, a call-out box, or a complementary section within the article.
+                     WHY: Clearly separates tangential content (like an author bio, related links, or advertisements) from the main flow,
+                     improving readability and semantic clarity for both users and search engines. -->
+                <h4>About the Author</h4>
+                <p id="author-info">Dr. HTML Savvy is a leading expert in web accessibility and semantic development.
+                   Her passion is making the web a better place for everyone through thoughtful code structure.</p>
+            </aside>
+
+            <section>
+                <!-- The <section> element represents a standalone section of a document, typically with a heading.
+                     It's more generic than <article> and useful for grouping related thematic content within an article,
+                     like "Related Posts" or "Comments" if they were part of the article's main content.
+                     WHY: Helps organize content into logical thematic groups, enhancing the document's structure. -->
+                <h4>Further Reading on HTML Semantics</h4>
+                <ul>
+                    <li><a href="#">The Importance of `alt` text for images</a></li>
+                    <li><a href="#">ARIA Attributes: When and How to Use Them</a></li>
+                </ul>
+            </section>
+
+            <footer>
+                <!-- The <footer> element, when used INSIDE an <article>, represents the footer for THAT SPECIFIC article.
+                     It can contain information like tags, categories, related articles, author contact info, or copyright specific to the article.
+                     WHY: Semantically groups the concluding information specific to the article, signaling its end. -->
+                <p>Tags: HTML5, Semantics, Accessibility, SEO, Web Development</p>
+                <p>&copy; 2023 Dr. HTML Savvy. All rights reserved for this article content.</p>
+            </footer>
+
+        </article>
+        <!-- End of <article> -->
+
+    </main>
+    <!-- End of <main> -->
+
+    <!--
+        NOTE: This tutorial focuses on the <article> structure.
+        In a full webpage, you'd typically have a global <nav> (navigation) and a global <footer> (site-wide footer)
+        outside of the <main> element, defining the overall site structure.
+        Here's a minimal example for context:
+    -->
+    <nav>
+        <!-- The global <nav> element represents a section of a page that contains navigation links to other pages or to parts within the page.
+             WHY: Clearly defines navigation for users and search engines. -->
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">All Blog Posts</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <footer class="site-footer">
+        <!-- The global <footer> element represents a footer for its nearest sectioning content (often the <body> itself).
+             A global footer typically contains information about the entire website, like copyright data,
+             links to privacy policy, or social media links.
+             WHY: Semantically identifies the site-wide footer, distinct from an article-specific footer. -->
+        <p>Global Site Footer &mdash; &copy; 2023 My Awesome Website. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
